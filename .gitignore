@@ -1,0 +1,75 @@
+# ─── Environment & Secrets ───────────────────────────────────────────────────
+.env
+.env.*
+.env.example
+
+# ─── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+eggs/
+*.egg-info/
+*.egg
+.eggs/
+MANIFEST
+
+# ─── Virtual Environments ────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.virtualenv/
+
+# ─── Testing & Coverage ──────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+*.lcov
+nosetests.xml
+test-results/
+
+# ─── Type Checking & Linting ─────────────────────────────────────────────────
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.pyright/
+
+# ─── Alembic ─────────────────────────────────────────────────────────────────
+# Keep migrations tracked; ignore generated cache/temp artefacts only
+migrations/__pycache__/
+
+# ─── Docker ──────────────────────────────────────────────────────────────────
+# Docker artefacts created at runtime (volumes, override files with secrets)
+docker-compose.override.yml
+
+# ─── IDE / Editors ───────────────────────────────────────────────────────────
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json.example
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── OS artefacts ────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ─── Misc ────────────────────────────────────────────────────────────────────
+*.pem
+*.key
+*.p12

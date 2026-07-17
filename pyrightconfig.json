@@ -1,0 +1,8 @@
+{
+  "venvPath": "c:\\Users\\Ryzen\\Documents\\ds_code_projects\\chirimoya\\api\\identity-service",
+  "venv": ".venv",
+  "pythonVersion": "3.14",
+  "pythonPlatform": "Windows",
+  "typeCheckingMode": "basic",
+  "include": ["app"]
+}

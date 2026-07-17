@@ -1,0 +1,10 @@
+### Identity Service — Health Check
+### Requires: REST Client extension (humao.rest-client)
+
+@baseUrl = http://localhost:8002
+
+# ──────────────────────────────────────────
+# GET /api/v1/health
+# ──────────────────────────────────────────
+### Health Check — should return { status: "ok", database: "ok" }
+GET {{baseUrl}}/api/v1/health

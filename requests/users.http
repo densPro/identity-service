@@ -1,0 +1,51 @@
+### Identity Service — Users Endpoints
+### Requires: REST Client extension (humao.rest-client)
+### Step 1: Run login in auth.http first, then paste your access_token below
+
+@baseUrl = http://localhost:8002
+
+# ──────────────────────────────────────────
+# Set your access_token here after logging in
+# ──────────────────────────────────────────
+@accessToken = PASTE_YOUR_ACCESS_TOKEN_HERE
+
+# ──────────────────────────────────────────
+# GET /api/v1/users/me
+# ──────────────────────────────────────────
+
+### 1. Get current authenticated user profile
+GET {{baseUrl}}/api/v1/users/me
+Authorization: Bearer {{accessToken}}
+
+###
+
+### 2. Get /me with no token → expect 403 Forbidden
+GET {{baseUrl}}/api/v1/users/me
+
+###
+
+### 3. Get /me with invalid token → expect 401 Unauthorized
+GET {{baseUrl}}/api/v1/users/me
+Authorization: Bearer this.is.invalid
+
+# ──────────────────────────────────────────
+# GET /api/v1/users/{user_id}
+# ──────────────────────────────────────────
+
+###
+
+### 4. Get user by ID — paste a valid UUID from a previous register/login response
+GET {{baseUrl}}/api/v1/users/PASTE_USER_UUID_HERE
+Authorization: Bearer {{accessToken}}
+
+###
+
+### 5. Get user with non-existent UUID → expect 404 Not Found
+GET {{baseUrl}}/api/v1/users/00000000-0000-0000-0000-000000000000
+Authorization: Bearer {{accessToken}}
+
+###
+
+### 6. Get user with malformed UUID → expect 422 Unprocessable Entity
+GET {{baseUrl}}/api/v1/users/not-a-valid-uuid
+Authorization: Bearer {{accessToken}}
