@@ -93,6 +93,15 @@ Content-Type: application/json
 
 ###
 
+### 6.1 Login with admin credentials
+POST {{baseUrl}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@chirimoya.com",
+  "password": "adminpass789"
+}
+
 ### 7. Login with wrong password → expect 401 Unauthorized
 POST {{baseUrl}}/api/v1/auth/login
 Content-Type: application/json
